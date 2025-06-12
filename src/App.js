@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Board className="Board">
+        </Board>
   );
+}
+
+function Board() {
+  const squareBoxValues = ['','','','','','','','',''];
+  return (
+    <div>
+      <SquareBox clickValue={squareBoxValues[0]}></SquareBox>
+      <SquareBox clickValue={squareBoxValues[1]}></SquareBox>
+      <SquareBox clickValue={squareBoxValues[2]}></SquareBox>
+      <br/>
+      <SquareBox clickValue={squareBoxValues[3]}></SquareBox>
+      <SquareBox clickValue={squareBoxValues[4]}></SquareBox>
+      <SquareBox clickValue={squareBoxValues[5]}></SquareBox>
+      <br/>
+      <SquareBox clickValue={squareBoxValues[6]}></SquareBox>
+      <SquareBox clickValue={squareBoxValues[7]}></SquareBox>
+      <SquareBox clickValue={squareBoxValues[8]}></SquareBox>
+    </div>
+  )
+}
+
+function SquareBox(props){
+  return ( <input type="text" value={props.clickValue} />)
 }
 
 export default App;
