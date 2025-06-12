@@ -1,33 +1,48 @@
 import './App.css';
+import React from 'react'
 
-function App() {
+export default function App() {
   return (
-        <Board className="Board">
-        </Board>
+        <div className="App">
+          <h1>
+            Tic Tac Toe - Let's Begin
+          </h1>
+          <Game></Game>
+        </div>
   );
 }
 
-function Board() {
-  const squareBoxValues = ['','','','','','','','',''];
+function Game(){
+const squareValues = [null,null,null,null,null,null,null,null,null];
+return (<Board className="Board" boardState={squareValues}></Board>)
+}
+
+function Board(props) {
   return (
-    <div>
-      <SquareBox clickValue={squareBoxValues[0]}></SquareBox>
-      <SquareBox clickValue={squareBoxValues[1]}></SquareBox>
-      <SquareBox clickValue={squareBoxValues[2]}></SquareBox>
-      <br/>
-      <SquareBox clickValue={squareBoxValues[3]}></SquareBox>
-      <SquareBox clickValue={squareBoxValues[4]}></SquareBox>
-      <SquareBox clickValue={squareBoxValues[5]}></SquareBox>
-      <br/>
-      <SquareBox clickValue={squareBoxValues[6]}></SquareBox>
-      <SquareBox clickValue={squareBoxValues[7]}></SquareBox>
-      <SquareBox clickValue={squareBoxValues[8]}></SquareBox>
-    </div>
+    <React.Fragment>
+      <table>
+        <tbody>
+          <tr>
+            <td><Square value={props.boardState[0]}></Square></td>
+            <td><Square value={props.boardState[1]}></Square></td>
+            <td><Square value={props.boardState[2]}></Square></td>
+          </tr>
+          <tr>
+            <td><Square value={props.boardState[3]}></Square></td>
+            <td><Square value={props.boardState[4]}></Square></td>
+            <td><Square value={props.boardState[5]}></Square></td>
+          </tr>
+          <tr>
+            <td><Square value={props.boardState[6]}></Square></td>
+            <td><Square value={props.boardState[7]}></Square></td>
+            <td><Square value={props.boardState[8]}></Square></td>
+          </tr>
+        </tbody>
+      </table>
+    </React.Fragment>
   )
 }
 
-function SquareBox(props){
-  return ( <input type="text" value={props.clickValue} />)
+function Square(props){
+  return ( <input type="text" value={props.value} />)
 }
-
-export default App;
