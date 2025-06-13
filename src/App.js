@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function App() {
   return (
-        <div className="App">
+        <div >
           <h1>
             Tic Tac Toe - Let's Begin
           </h1>
@@ -20,7 +20,7 @@ return (<Board className="Board" boardState={squareValues}></Board>)
 function Board(props) {
   return (
     <React.Fragment>
-      <table>
+      <table className="Board">
         <tbody>
           <tr>
             <td><Square value={props.boardState[0]}></Square></td>
