@@ -2,18 +2,12 @@ h1 {
   text-align: center;
 }
 
-td {
-  padding: 0px;
+button{
   height: 90px;
-  
+  width: 90px;
 }
 
-input{
-  height: 90px;
-}
-
-table{
-  border-collapse: collapse;
-  left:350px;
+.table{
+  left:725px;
   position: relative;
 }

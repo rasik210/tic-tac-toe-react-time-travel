@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function App() {
   return (
-        <div >
+        <div>
           <h1>
             Tic Tac Toe - Let's Begin
           </h1>
@@ -20,29 +20,30 @@ return (<Board className="Board" boardState={squareValues}></Board>)
 function Board(props) {
   return (
     <React.Fragment>
-      <table className="Board">
-        <tbody>
-          <tr>
-            <td><Square value={props.boardState[0]}></Square></td>
-            <td><Square value={props.boardState[1]}></Square></td>
-            <td><Square value={props.boardState[2]}></Square></td>
-          </tr>
-          <tr>
-            <td><Square value={props.boardState[3]}></Square></td>
-            <td><Square value={props.boardState[4]}></Square></td>
-            <td><Square value={props.boardState[5]}></Square></td>
-          </tr>
-          <tr>
-            <td><Square value={props.boardState[6]}></Square></td>
-            <td><Square value={props.boardState[7]}></Square></td>
-            <td><Square value={props.boardState[8]}></Square></td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="table">
+        {/* row 1 */}
+        <div> 
+          <Square value={props.boardState[0]}></Square>
+          <Square value={props.boardState[1]}></Square>
+          <Square value={props.boardState[2]}></Square>
+        </div>
+        {/* row 2 */}
+        <div> 
+          <Square value={props.boardState[3]}></Square>
+          <Square value={props.boardState[4]}></Square>
+          <Square value={props.boardState[5]}></Square>
+        </div>
+        {/* row 3 */}
+        <div> 
+          <Square value={props.boardState[6]}></Square>
+          <Square value={props.boardState[7]}></Square>
+          <Square value={props.boardState[8]}></Square>
+        </div>
+      </div>
     </React.Fragment>
   )
 }
 
 function Square(props){
-  return ( <input type="text" value={props.value} />)
+  return ( <button>{props.value}</button>)
 }
