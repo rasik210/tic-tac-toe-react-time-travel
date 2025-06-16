@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react'
+import React, { useState } from 'react';
 
 export default function App() {
   return (
@@ -12,35 +12,52 @@ export default function App() {
   );
 }
 
-function Game(){
-const squareValues = [null,null,null,null,null,null,null,null,null];
-return (<Board className="Board" boardState={squareValues}></Board>)
-}
+function Game() {
+  function Board() {
+  const [squares, setSquares] = useState([null,null,null,null,null,null,null,null,null]);
+  const [xIsNext, setXIsNext] = useState(true);
+  function handleClick(i){
+    if(squares[i] != null) {
+      return;
+    }
+    const nextSquares = squares.slice();
+    if(xIsNext) {
+      nextSquares[i] = "X";
+    } else {
+      nextSquares[i] = "O";
+    } 
+    setXIsNext(!xIsNext);
+    setSquares(nextSquares);
+  }
 
-function Board(props) {
   return (
     <React.Fragment>
       <div className="table">
-        <div className="row"> 
-          <Square value={props.boardState[0]}></Square>
-          <Square value={props.boardState[1]}></Square>
-          <Square value={props.boardState[2]}></Square>
+        <div className="row">  
+          <Square value={squares[0]} onSquareClick={() => handleClick(0)}></Square>
+          <Square value={squares[1]} onSquareClick={() => handleClick(1)}></Square>
+          <Square value={squares[2]} onSquareClick={() => handleClick(2)}></Square>
         </div>
         <div className="row"> 
-          <Square value={props.boardState[3]}></Square>
-          <Square value={props.boardState[4]}></Square>
-          <Square value={props.boardState[5]}></Square>
+          <Square value={squares[3]} onSquareClick={() => handleClick(3)}></Square>
+          <Square value={squares[4]} onSquareClick={() => handleClick(4)}></Square>
+          <Square value={squares[5]} onSquareClick={() => handleClick(5)}></Square>
         </div>
         <div className="row"> 
-          <Square value={props.boardState[6]}></Square>
-          <Square value={props.boardState[7]}></Square>
-          <Square value={props.boardState[8]}></Square>
+          <Square value={squares[6]} onSquareClick={() => handleClick(6)}></Square>
+          <Square value={squares[7]} onSquareClick={() => handleClick(7)}></Square>
+          <Square value={squares[8]} onSquareClick={() => handleClick(8)}></Square>
         </div>
       </div>
     </React.Fragment>
   )
 }
 
-function Square(props){
-  return ( <button>{props.value}</button>)
+return (
+        <Board className="Board"></Board>
+      )
+}
+
+function Square({value, onSquareClick}){
+  return ( <button onClick={onSquareClick}>{value}</button>)
 }
