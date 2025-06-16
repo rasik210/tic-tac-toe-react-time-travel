@@ -1,5 +1,5 @@
 import './App.css';
-import Board from './components/Board';
+import Game from './components/Game';
 
 export default function App() {
   return (
@@ -7,7 +7,7 @@ export default function App() {
           <h1>
             Tic Tac Toe - Let's Begin
           </h1>
-          <Board></Board>
+          <Game></Game>
         </div>
   );
 }
