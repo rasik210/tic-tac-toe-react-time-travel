@@ -21,20 +21,17 @@ function Board(props) {
   return (
     <React.Fragment>
       <div className="table">
-        {/* row 1 */}
-        <div> 
+        <div className="row"> 
           <Square value={props.boardState[0]}></Square>
           <Square value={props.boardState[1]}></Square>
           <Square value={props.boardState[2]}></Square>
         </div>
-        {/* row 2 */}
-        <div> 
+        <div className="row"> 
           <Square value={props.boardState[3]}></Square>
           <Square value={props.boardState[4]}></Square>
           <Square value={props.boardState[5]}></Square>
         </div>
-        {/* row 3 */}
-        <div> 
+        <div className="row"> 
           <Square value={props.boardState[6]}></Square>
           <Square value={props.boardState[7]}></Square>
           <Square value={props.boardState[8]}></Square>

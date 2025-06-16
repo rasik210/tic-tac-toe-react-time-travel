@@ -8,6 +8,10 @@ button{
 }
 
 .table{
-  left:725px;
+  left:475px;
   position: relative;
+}
+
+.row{
+  display: flex;
 }
