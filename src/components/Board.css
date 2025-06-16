@@ -1,0 +1,19 @@
+
+h2 {
+  position:relative;
+  left: 38vw;
+}
+
+.table{
+  left: 33.33vw;
+  position: relative;
+}
+
+.row{
+  display: flex;
+}
+
+.reset {
+  margin-left: 33.33vw;
+  margin-top: 10px;
+}

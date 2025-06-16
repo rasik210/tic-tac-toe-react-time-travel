@@ -2,29 +2,3 @@ h1 {
   position:relative;
   left: 30vw;
 }
-
-h2 {
-  position:relative;
-  left: 38vw;
-}
-
-.square{
-  height: 90px;
-  width: 90px;
-  font-size: xx-large;
-}
-
-
-.table{
-  left: 33.33vw;
-  position: relative;
-}
-
-.row{
-  display: flex;
-}
-
-.reset {
-  margin-left: 33.33vw;
-  margin-top: 10px;
-}
