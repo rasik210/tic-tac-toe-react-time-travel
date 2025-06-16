@@ -1,5 +1,11 @@
 h1 {
-  text-align: center;
+  position:relative;
+  left: 30vw;
+}
+
+h2 {
+  position:relative;
+  left: 38vw;
 }
 
 button{
@@ -8,8 +14,9 @@ button{
   font-size: xx-large;
 }
 
+
 .table{
-  left:475px;
+  left: 33.33vw;
   position: relative;
 }
 
