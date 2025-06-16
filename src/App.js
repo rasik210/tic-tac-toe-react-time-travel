@@ -7,13 +7,12 @@ export default function App() {
           <h1>
             Tic Tac Toe - Let's Begin
           </h1>
-          <Game></Game>
+          <Board></Board>
         </div>
   );
 }
 
-function Game() {
-  function Board() {
+function Board() {
   const [squares, setSquares] = useState([null,null,null,null,null,null,null,null,null]);
   const [xIsNext, setXIsNext] = useState(true);
   function handleClick(i){
@@ -51,11 +50,6 @@ function Game() {
       </div>
     </React.Fragment>
   )
-}
-
-return (
-        <Board className="Board"></Board>
-      )
 }
 
 function Square({value, onSquareClick}){
