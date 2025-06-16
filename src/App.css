@@ -8,7 +8,7 @@ h2 {
   left: 38vw;
 }
 
-button{
+.square{
   height: 90px;
   width: 90px;
   font-size: xx-large;
@@ -22,4 +22,9 @@ button{
 
 .row{
   display: flex;
+}
+
+.reset {
+  margin-left: 33.33vw;
+  margin-top: 10px;
 }
